@@ -34,13 +34,22 @@ We provide the `Clothing`, `Meal`, `Pet`, and `Comment` datasets as .csv files i
 To reproduce the experiments in the paper which involve training grids of models using different hyperparameters, refer to files within the `image_models` and `text_models` folders.
 
 ```
-bash ${folder}/sbatch_multi.sh 
+bash ${folder}/{bash_script} 
 ```
 
 where:
 - `folder` corresponds to either `image_models` or `text_models`
+- `bash_script` corresponds to script used on the compute cluster 
 
 Sample bash scripts showing the command can also be found in `bash_scripts/`.
+Jobs can also be launched using the `sweep.py` in `image_models` as:
+
+```
+python sweep.py launch \
+    --experiment_name {experiment_name} \
+    --output_dir {output_root} \
+    --command_launcher {launcher} 
+```
 
 ### 2. Aggregating Results
 We aggregate results and generate tables using the aggregation scripts in `lib`.
