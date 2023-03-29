@@ -127,7 +127,7 @@ if __name__ == "__main__":
     parser.add_argument('--no_output_dir', action = 'store_true')
     parser.add_argument('--restart_running', action='store_true', help = 'cancel and re-run all currently running Slurm jobs')
     args = parser.parse_args()        
-    
+    #NB:  run.py must have "experiment_name" and "output_dir" parameter to launch jobs using this.
     args_list = make_args_list(args.experiment_name)
     running_jobs_list = list(chain(*launchers.get_slurm_jobs(getpass.getuser()))) if args.command_launcher == 'slurm' else []
     jobs = [Job(train_args, args.output_root, args.slurm_pre, experiments.get_script_name(args.experiment_name), args.no_output_dir,
