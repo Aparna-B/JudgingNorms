@@ -173,7 +173,7 @@ The dataset has been used to test the hypothesis: that the judgment process invo
 
 ### Is there a repository that links to any or all papers or systems that use the dataset?
 
-Yes, this [Github repository] (https://github.com/MLforHealth/JudgingNorms)
+Yes, this [Github repository] (https://github.com/Aparna-B/JudgingNorms)
 
 ### What (other) tasks could the dataset be used for?
 
@@ -196,7 +196,7 @@ In some cases, the individual data instances cannot be re-distributed.
 
 ### How will the dataset will be distributed (e.g., tarball on website, API, GitHub)?
 
-The data will be posted on the [Github repository] (https://github.com/MLforHealth/JudgingNorms).
+The data will be posted on the [Github repository] (https://github.com/Aparna-B/JudgingNorms).
 
 ### When will the dataset be distributed?
 
@@ -216,7 +216,7 @@ No, no regulatory restrictions apply to the labels. Individual restrictions may 
 
 ## Maintenance
 
-The data will be supported/hosted on the [Github repository] (https://github.com/MLforHealth/JudgingNorms), and maintained by the research team members.
+The data will be supported/hosted on the [Github repository] (https://github.com/Aparna-B/JudgingNorms), and maintained by the research team members.
 
 For any questions or requests, please contact aparnab@mit.edu.
 
