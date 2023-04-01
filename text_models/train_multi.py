@@ -242,7 +242,7 @@ if __name__ == '__main__':
     if model_name == 'bert-base-uncased':
         res = Detoxify('original')
         res = res.model
-        pretrained_dict = res.roberta.state_dict()
+        pretrained_dict = res.bert.state_dict()
     elif model_name == 'albert-base-v2':
         res = Detoxify('original-small')
         res = res.model
