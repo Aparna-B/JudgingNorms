@@ -14,6 +14,7 @@ from focal_loss.focal_loss import FocalLoss
 import torch.nn.functional as F
 #criterion = FocalLoss(alpha=2, gamma=5)
 from text_data_split import get_data_split, get_external_data_split
+import copy
 np.random.seed(1)
 
 # hyperparameters
@@ -200,12 +201,12 @@ if __name__ == '__main__':
     val_dataset = Dataset(val_encodings, val_y, val_texts)
 
     model = BertMultiSequenceClassification(model_name, 4)
-    if model_name == 'roberta-base':
-        res = Detoxify('unbiased')
+    if model_name == 'bert-base-uncased':
+        res = Detoxify('original')
         res = res.model
-        pretrained_dict = res.roberta.state_dict()
+        pretrained_dict = res.bert.state_dict()
     elif model_name == 'albert-base-v2':
-        res = Detoxify('unbiased-small')
+        res = Detoxify('original-small')
         res = res.model
         pretrained_dict = res.albert.state_dict()
     else:
@@ -267,7 +268,7 @@ if __name__ == '__main__':
         curr_acc = f1_score(true_labels,predictions, average='macro')
         if curr_acc > best_acc:
             best_acc = curr_acc
-            best_model_weight = model.state_dict()
+            best_model_weight = copy.deepcopy(model.state_dict())
 
     if epochs>0:
         model.load_state_dict(best_model_weight)
